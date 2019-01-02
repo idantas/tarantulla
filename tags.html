@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="estilo.css">
+  <title>Taranttulla Tags | Data with endless possibilities</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Get data with endless possibilities">
+
+
+</head>
+
+<body>
+
+
+  <div class="container">
+    <!-- cabecalho -->
+    <header class="cabecalho">
+      <nav>
+        <a class="logo" href="index.html">
+          <img src="img/logo-beta.png" alt="Tarantulla">
+        </a>
+
+        <!-- menu -->
+        <menu>
+          <ul class="menu flex">
+            <li><a href="#tags">Tags</a></li>
+            <li><a href="#howto"> Suite </a></li>
+            <li><a href="https://github.com/oncase/tarantulla" target="_blank">Open Source</a></li>
+            <li><a href="https://medium.com/oncase/search?q=Tarantulla" target="_blank">Resources</a></li>
+            <li><a class="login" onclick="action(this)" data-action="login">Login</a></li>
+          </ul>
+        </menu>
+
+        <div class="lang">
+          <a href="pt.html" >PT</a> <a href="index.html" class="ativo">EN</a>
+        </div>
+
+
+        <!-- modal -->
+        <div class="modal">
+
+          <!-- login -->
+          <div data-modal="login">
+            <div class="flex extremos">
+              <h2 class="subtitulo">login</h2>
+              <span class="close" onclick="closeModal(this)">&#10006; Fechar</span>
+            </div>
+            <form class="formToUs " name="formLogin">
+              <label>E-mail<input type="Email" name="email" required></label>
+              <label>Senha<input type="password" name="senha" required></label>
+              <input type="submit" value="Acessar" class="button principal">
+            </form>
+          </div>
+
+          <!-- cadastro -->
+          <div data-modal="cadastro">
+            <div class="flex extremos">
+              <h2 class="subtitulo">Seu cadastro</h2>
+              <span class="close" onclick="closeModal(this)">&#10006; Fechar</span>
+            </div>
+            <form class="formToUs " name="formCadastro">
+              <label>Nome<input type="text" name="nome" required></label>
+              <label>E-mail<input type="Email" name="email" required></label>
+              <label>Senha<input type="password" name="senha" required></label>
+              <input type="submit" value="Terminar cadastro" class="button principal">
+            </form>
+          </div>
+
+        </div>
+
+
+
+
+
+      </nav>
+    </header>
+  </div>
+
+
+
+  <section id="tags" class="relative intern">
+    <div class="box-titulo container center">
+      <h1 class="subtitulo center">TARANTULLA <b>[TAGS]</b></h1>
+      <p class="descricao"> Watch the video below and know more about Tags.</p>
+    </div>
+    <div class="about container">
+      <div class="video ">
+        <iframe width="100%" height="350" src="https://www.youtube.com/embed/Dz0WH6yi7jA?showinfo=0" frameborder="0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+      </div>
+      <div class="flex box-buttons">
+        <a class="button clear" href="">Explore API docs</a>
+        <a class="button principal" onclick="action(this)" data-action="cadastro">Get start</a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // abrir o modal especifico
+    function action(obj) {
+      var acao = obj.dataset.action,
+        box_actions = document.querySelectorAll('[data-modal]');
+      removeAll(box_actions, 'ativo');
+      document.querySelector("[data-modal='" + acao + "']").classList.add('ativo');
+      document.querySelector("[data-modal='" + acao + "']").closest('.modal').classList.add('ativo');
+    }
+
+    // fechar modal
+    function closeModal(obj) {
+      obj.closest('.modal').classList.remove('ativo');
+    }
+
+    // esconde todos os modals  
+    function removeAll(obj, classe) {
+      var x = 0, all = obj.length;
+      for (; x < all; x++) {
+        obj[x].classList.remove(classe)
+      }
+    }
+
+  </script>
+
+  <section id="aboutTags">
+    <div class="container">
+      <ul class="list-caracter">
+        <li><img src="img/check.svg">Analyze text using natural language understanding. </li>
+        <li><img src="img/check.svg">Content-in, tags of subjects out. </li>
+        <li><img src="img/check.svg">Hashtags Suggestion (Generate optimal hashtags for social sharing)</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- PRINCING -->
+  <section id="princing">
+    <div class="box-titulo container center">
+      <h1 class="title center">TAGS PRINCING</h1>
+    </div>
+    <div class="container">
+      <div class="princing">
+        <div class="row header">
+          <div class="col"></div>
+          <div class="col">
+            Essential
+            <span class="price">$149/Monthly</span>
+          </div>
+          <div class="col">
+            Entreprise
+            <span class="price">Custom Plan</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">We do it for you</div>
+          <div class="col"><img src="img/x.svg" /></div>
+          <div class="col"><img src="img/check.svg" /></div>
+        </div>
+
+        <div class="row">
+          <div class="col">Hashtags Suggestion</div>
+          <div class="col">
+            <img src="img/check.svg" />
+            <span class="detail">Unlimited</span>
+          </div>
+          <div class="col">
+            <img src="img/check.svg" />
+            <span class="detail">Unlimited</span>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col">Smart content building</div>
+          <div class="col">
+            <img src="img/check.svg" />
+            <span class="detail">500/monthly</span>
+          </div>
+          <div class="col">
+            <img src="img/check.svg" />
+            <span class="detail">Unlimited</span>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col">Smart content building</div>
+          <div class="col">
+            <img src="img/check.svg" />
+            <span class="detail">500/monthly</span>
+          </div>
+          <div class="col">
+            <img src="img/check.svg" />
+            <span class="detail">Unlimited</span>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col"></div>
+          <div class="col"> <a class="button principal" onclick="action(this)" data-action="cadastro">Subsribe</a></div>
+          <div class="col">
+            <a class="button principal contacts" href="">Contact</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <!-- mailchimp -->
+  <div id="form-mailchip">
+
+    <div id="mc_embed_signup">
+      <!-- Begin MailChimp Signup Form -->
+      <div id="mc_embed_signup">
+        <form action="https://oncase.us18.list-manage.com/subscribe/post?u=ed60dd90cdf300bf46078b699&amp;id=1d1f6b5e11"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+          novalidate>
+          <div id="mc_embed_signup_scroll">
+            <h2 class="subtitulo">Subscribe to recive our news</h2>
+            <div class="mc-field-group">
+              <label for="mce-FNAME">Your Name </label>
+              <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+            </div>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+              </label>
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            </div>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ed60dd90cdf300bf46078b699_1d1f6b5e11"
+                tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </div>
+        </form>
+      </div>
+
+      <!--End mc_embed_signup-->
+    </div>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <script type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+    <!--End mc_embed_signup-->
+  </div>
+
+<!-- rodape -->
+  <footer class="rodape relative">
+    <div class="flex extremos final">
+      <div class="group-link">
+        <a href="terms.html">Terms of use</a>
+      </div>
+      <h3 class="mini-chamada">Any doubt about data tools, get in touch with <a href="https://www.oncase.com.br/"
+          target="_blank">onca.se</a></h3>
+      <span class="link min">powered by <a href="https://www.oncase.com.br/" target="_blank"><img src="img/onca.png"
+            alt="oncase"></a></span>
+    </div>
+  </footer>
+
+
+
+
+</body>
+
+
+
+
+
+<!-- scroll animation -->
+<script>
+  var doc = $('html, body');
+  $('.menu a, .box-buttons a, .alert').click(function () {
+    doc.animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
+    return false;
+  });
+
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121173044-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'UA-121173044-3');
+</script>
+
+<!-- smartlook -->
+<script type="text/javascript">
+  window.smartlook || (function (d) {
+    var o = smartlook = function () { o.api.push(arguments) }, h = d.getElementsByTagName('head')[0];
+    var c = d.createElement('script'); o.api = new Array(); c.async = true; c.type = 'text/javascript';
+    c.charset = 'utf-8'; c.src = 'https://rec.smartlook.com/recorder.js'; h.appendChild(c);
+  })(document);
+  smartlook('init', 'e1a2ed37e88235167559a658806d9071420e4682');
+</script>
+
+</html>

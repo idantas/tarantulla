@@ -37,7 +37,7 @@
         </menu>
 
         <div class="lang">
-          <a href="pt.html" class="ativo">PT</a> <a href="index.html">EN</a>
+          <a href="pt.html" class="ativo" >PT</a> <a href="index.html" >EN</a>
         </div>
 
       </nav>
@@ -207,7 +207,7 @@
         <img src="img/code.png" class="bg wedo">
 
         <form action="https://submit-form.com/ef44b3ce-9db0-4b7a-84ce-b5cc5c8d4f39" class="formToUs">
-          <input type="hidden" name="_redirect" value="https://tarantulla.io/pt.html" />
+          <input type="hidden" name="_redirect" value="https://tarantulla.io/pt.html?t=1" />
           <label>
             Nome
             <input type="text" name="nome" required>
@@ -217,8 +217,16 @@
             <input type="Email" name="email" required>
           </label>
           <label>
+            Telefone para contato
+            <input type="text" name="telefone:" required>
+          </label>
+          <label>
             Empresa
             <input type="text" name="empresa" required>
+          </label>
+          <label>
+            Nos fale um pouco do que você precisa.
+            <textarea name="messsage"  cols="30" rows="4"></textarea>
           </label>
           <input type="submit" value="Enviar Contato" class="button principal">
         </form>
@@ -277,9 +285,19 @@
   </footer>
 </body>
 
+<script >
+    var url_atual = window.location.href;
+    if(url_atual.indexOf('t=1') != -1 ){
+          alert('Olá! Recebemos a sua mensagem e logo, logo estaremos entrando em contato com você. Por favor, check o seu seu e-mail.');
+    }
+          
+    </script>
+
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+
+>
 
   <!-- scroll animation -->
 <script>

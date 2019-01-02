@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="estilo.css">
+  <title>Taranttulla Tags | Data with endless possibilities</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Get data with endless possibilities">
+
+
+</head>
+
+<body>
+
+
+  <div class="container">
+    <!-- cabecalho -->
+    <header class="cabecalho">
+      <nav>
+        <a class="logo" href="index.html">
+          <img src="img/logo-beta.png" alt="Tarantulla">
+        </a>
+
+        <!-- menu -->
+        <menu>
+          <ul class="menu flex">
+            <li><a href="#tags">Tags</a></li>
+            <li><a href="#howto"> Suite </a></li>
+            <li><a href="https://github.com/oncase/tarantulla" target="_blank">Open Source</a></li>
+            <li><a href="https://medium.com/oncase/search?q=Tarantulla" target="_blank">Resources</a></li>
+            <li><a class="login" onclick="action(this)" data-action="sair">Sair</a></li>
+          </ul>
+        </menu>
+
+        <div class="lang">
+          <a href="pt.html">PT</a> <a href="index.html" class="ativo">EN</a>
+        </div>
+
+      </nav>
+    </header>
+  </div>
+
+  <!-- cabecalho end user -->
+  <div class="cabecalho-user">
+    <!-- caixa user -->
+    <div class="box-user"> <span>Ola, João</span></div>
+  </div>
+
+  <section id="mytags">
+
+    <img src="img/tags.png" class="bg-topo" />
+    <!-- primeira etapa -->
+    <div class="container relative">
+      <h2 class="big-text">1º - Faça upload de um arquivo CSV com o conteúdo e as tags que você quer treinar</h2>
+      <p style="margin: 2rem 0 0;font-size: .9rem;">Temos um arquivo de exemplo, baixe e veja qual é a estrutura que
+        você deve enviar. Só <strong download style="cursor:pointer">clicar aqui</strong></p>
+      <div class="box-file">
+        <div class="file">
+          <label class="flex center">
+            <p>Você ainda não inseriu nenhum csv</p>
+            <input type="file" name="file_to_training" onchange="addImg(this)" required accept=".csv" />
+            <a>Inserir CSV</a>
+          </label>
+        </div>
+        <button class="button principal">Treinar Tags</button>
+      </div>
+    
+    </div>
+
+    <!-- segunda etapa -->
+    <div class="bg-blue">
+      <div class="container relative flex center extremos">
+        <div>
+          <h2 class="big-text">2º - Faça upload do aquivo que conhea os textos que você quer receber as tags</h2>
+          <div class="box-file">
+            <div class="file">
+              <label class="flex center">
+                <p>Você ainda não inseriu nenhum texo</p>
+                <input type="file" name="file_to_training" accept=".csv" onchange="addImg(this)" required />
+                <a>Inserrir CSV</a>
+              </label>
+            </div>
+            <button class="button principal">Obter Tags</button>
+          </div>
+        </div>
+
+        <div class="box-download">
+          <a download id="download" class="button principal flex center"><img src="img/arrow-down-circle.svg">Baixar
+            Json com as Tags</a>
+          <span class="mark">JSON</span>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+
+
+  <!-- rodape -->
+  <footer class="rodape relative">
+    <div class="flex extremos final">
+      <div class="group-link">
+        <a href="terms.html">Terms of use</a>
+      </div>
+      <h3 class="mini-chamada">Any doubt about data tools, get in touch with <a href="https://www.oncase.com.br/"
+          target="_blank">onca.se</a></h3>
+      <span class="link min">powered by <a href="https://www.oncase.com.br/" target="_blank"><img src="img/onca.png"
+            alt="oncase"></a></span>
+    </div>
+  </footer>
+
+
+
+
+</body>
+
+
+<script>
+  function addImg(obj) {
+    var file = obj.files[0], pai = obj.closest('label');
+    if (file) {
+      pai.querySelector('p').innerHTML = file.name;
+      pai.querySelector('a').innerHTML = "Alterar CSV";
+    }
+  }
+
+  // abrir o modal especifico
+  function action(obj) {
+    var acao = obj.dataset.action,
+      box_actions = document.querySelectorAll('[data-modal]');
+    removeAll(box_actions, 'ativo');
+    document.querySelector("[data-modal='" + acao + "']").classList.add('ativo');
+    document.querySelector("[data-modal='" + acao + "']").closest('.modal').classList.add('ativo');
+  }
+
+  // fechar modal
+  function closeModal(obj) {
+    obj.closest('.modal').classList.remove('ativo');
+  }
+
+  // esconde todos os modals  
+  function removeAll(obj, classe) {
+    var x = 0, all = obj.length;
+    for (; x < all; x++) {
+      obj[x].classList.remove(classe)
+    }
+  }
+
+
+
+
+</script>
+
+
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+
+
+<!-- scroll animation -->
+<script>
+  var doc = $('html, body');
+  $('.menu a, .box-buttons a, .alert').click(function () {
+    doc.animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
+    return false;
+  });
+
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121173044-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'UA-121173044-3');
+</script>
+
+<!-- smartlook -->
+<script type="text/javascript">
+  window.smartlook || (function (d) {
+    var o = smartlook = function () { o.api.push(arguments) }, h = d.getElementsByTagName('head')[0];
+    var c = d.createElement('script'); o.api = new Array(); c.async = true; c.type = 'text/javascript';
+    c.charset = 'utf-8'; c.src = 'https://rec.smartlook.com/recorder.js'; h.appendChild(c);
+  })(document);
+  smartlook('init', 'e1a2ed37e88235167559a658806d9071420e4682');
+</script>
+
+</html>

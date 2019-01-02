@@ -13,6 +13,8 @@
   <meta name="robots" content="index, follow">
   <meta name="description" content="Get data with endless possibilities">
 
+
+  
 </head>
 
 <body>
@@ -28,15 +30,22 @@
 
         <menu>
           <ul class="menu flex">
-            <li><a href="#howto">What</a></li>
+            <li><a href="tags.html">Tags</a></li>
+            <li><a href="#howto"> Suite </a></li>
             <li><a href="https://github.com/oncase/tarantulla" target="_blank">Open Source</a></li>
             <li><a href="https://medium.com/oncase/search?q=Tarantulla" target="_blank">Resources</a></li>
           </ul>
         </menu>
 
         <div class="lang">
-          <a href="pt.html">PT</a> <a href="index.html" class="ativo">EN</a>
+            <a href="pt.html">PT</a> <a href="index.html" class="ativo">EN</a>
         </div>
+        <script>
+            // lang
+            function language(opt) {
+              localStorage.setItem('lang', opt.dataset.lang);
+            } 
+          </script>
 
       </nav>
     </header>
@@ -87,15 +96,35 @@
 
 
   </div>
-  </section>
 
-  <!-- HOW TO -->
+
+  <!-- <section id="tags" class="relative">
+      <div class="box-titulo container center">
+          <h1 class="subtitulo center">TARANTULLA <b>[</b>TAGS<b>]</b></h1>
+          <p class="descricao">Analyze text using natural language understanding. <br> Content-in, tags of subjects out.</p>
+      </div>
+      <div class="about container">
+        <div class="video ">
+          <iframe width="100%" height="350" src="https://www.youtube.com/embed/Dz0WH6yi7jA?showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          
+        </div>
+        <div class="flex box-buttons">
+            <a class="button clear" href="">Explore API docs</a>
+          <a class="button principal" href="">Get start</a>
+        </div>
+
+      </div>
+  </section> -->
+
+  <!-- HOW TO --> 
   <section id="howto" class="relative">
     <div class="container ">
-      <div class="box-titulo">
+      
+
+      <div class="box-titulo tarantulla-suite">
         <h1 class="title center">TARANTULLA SUITE</h1>
         <p class="descricao">
-          Tarantulla is an <b>Open Source</b> project with extractors by channels, for scraping and crawler of web data.
+          Tarantulla Suite is an <b>Open Source</b> project with extractors by channels, for scraping and crawler of web data.
         </p>
       </div>
 
@@ -168,9 +197,6 @@
 
       </div>
 
-
-
-
       <div id="cases">
         <h1 class="title center">PROJECTS USING THE TARANTULLA</h1>
         <ul class="lista-cases">
@@ -196,7 +222,6 @@
         </ul>
       </div>
 
-
       <div id="wedoing" class="relative">
 
         <h2 class="subtitulo">We do it for you</h2>
@@ -217,8 +242,16 @@
             <input type="Email" name="email" required>
           </label>
           <label>
+            Contact number
+            <input type="text" name="telefone:" required>
+          </label>
+          <label>
             Company
             <input type="text" name="empresa" required>
+          </label>
+          <label>
+            Tell us something about your need
+            <textarea name="Messsage"  cols="30" rows="4"></textarea>
           </label>
           <input type="submit" value="Send my contact" class="button principal">
         </form>
